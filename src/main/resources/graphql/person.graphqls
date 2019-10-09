@@ -1,0 +1,22 @@
+type Person {
+    id: ID!,
+    name: String,
+    address: Address
+}
+
+type Address {
+    street: String,
+    houseNumber: String,
+    postalCode: String,
+    city: String,
+    country: String
+}
+
+type Query {
+    persons(count: Int):[Person]
+    person(id: ID):Person
+}
+
+type Mutation {
+    createPerson(name: String!, street: String!, houseNumber: String, postalCode: String, city: String, country: String):Person
+}
